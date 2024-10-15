@@ -331,6 +331,17 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<label for="messageInput">Ajouter un message:</label> 
+<input type="text" id="messageInput" [(ngModel)]="Text_Entrer" placeholder="Entrez votre message ici...">
+<button (click)="Ajout_Liste()">Ajouter</button>
+<button (click)="Supprimer()">Supprimer</button>
+<button (click)="trierAscendant()">Trie</button>
+<button (click)="type_couleur()">{{ buttonLabel }}</button>
+<button (click)="Affichage()">{{ displayButtonLabel }}</button> 
+
+<ul *ngIf="afficher_Liste">
+  <li *ngFor="let m of Liste_msgs; let i = index" [ngStyle]="{ 'color': m.color }">{{m.text }}</li>
+</ul>
 
 
 <router-outlet />
