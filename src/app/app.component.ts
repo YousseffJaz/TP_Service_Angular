@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MessageService } from './message.service';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ export class AppComponent {
   buttonLabel = 'Random';  
   afficher_Liste=true;
   displayButtonLabel = 'Hide';
+  constructor(public messageService: MessageService) {}
 
   Ajout_Liste() {
     if (this.Text_Entrer.trim() !== '') {
@@ -56,6 +58,11 @@ export class AppComponent {
     this.afficher_Liste = !this.afficher_Liste; 
     this.displayButtonLabel = this.afficher_Liste ? 'Hide' : 'Show';
   }
-
+  ajouterMessage(nouveauMessage: string) {
+    this.messageService.addMessage(nouveauMessage);
+  }
+  getMessages(): string[] {
+    return this.messageService.getMessages();
+  }
 
 }

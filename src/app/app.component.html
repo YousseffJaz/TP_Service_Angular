@@ -337,11 +337,14 @@
 <button (click)="Supprimer()">Supprimer</button>
 <button (click)="trierAscendant()">Trie</button>
 <button (click)="type_couleur()">{{ buttonLabel }}</button>
-<button (click)="Affichage()">{{ displayButtonLabel }}</button> 
-
+<button (click)="Affichage()">{{ displayButtonLabel }}</button><br/>
+<button (click)="ajouterMessage(Text_Entrer)">Ajouter un message</button>
+<button (click)="messageService.clearMessages()">Effacer les messages</button>
 <ul *ngIf="afficher_Liste">
   <li *ngFor="let m of Liste_msgs; let i = index" [ngStyle]="{ 'color': m.color }">{{m.text }}</li>
 </ul>
 
-
+<ul>
+  <li *ngFor="let message of getMessages()">{{ message }}</li>
+</ul>
 <router-outlet />

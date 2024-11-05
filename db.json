@@ -1,0 +1,13 @@
+{
+    "messages": [
+      { "id": 1, "text": "Bonjour!" },
+      { "id": 2, "text": "Bienvenue sur notre site" },
+      { "id": 3, "text": "Comment puis-je vous aider aujourd'hui ?" }
+    ],
+    "users": [
+      { "id": 1, "name": "Alice", "email": "alice@example.com" },
+      { "id": 2, "name": "Bob", "email": "bob@example.com" },
+      { "id": 3, "name": "Charlie", "email": "charlie@example.com" }
+    ]
+  }
+  
